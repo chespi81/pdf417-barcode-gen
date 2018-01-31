@@ -39,31 +39,36 @@ public class App {
 	private static final String DEFAULT_IMAGE_FORMAT = "png";
 
 	public static void main(String[] args) throws IOException {
-		String salida = args[1];
-		String formato = DEFAULT_IMAGE_FORMAT;
-		int rows = DEFAULT_PDF417_ROWS;
-		int columns = DEFAULT_PDF417_COLUMNS;
-		int errorLevel = DEFAULT_PDF417_ERROR_LEVEL;
-		int lenCodewords = DEFAULT_PDF417_LEN_CODEWORDS;
-		int options = DEFAULT_PDF417_OPTIONS;
-		String encoding = DEFAULT_PDF417_ENCODING;
-		Color color1 = DEFAULT_PDF417_COLOR;
-		Color color2 = DEFAULT_PDF417_BG_COLOR;
-		if (args.length > 10) {
-			formato = args[2];
-			rows = Integer.parseInt(args[3]);
-			columns = Integer.parseInt(args[4]);
-			errorLevel = Integer.parseInt(args[5]);
-			lenCodewords = Integer.parseInt(args[6]);
-			options = Integer.parseInt(args[7]);
-			color1 = Color.decode(args[8]);
-			color2 = Color.decode(args[9]);
-			encoding = args[10];
-		}
-		String text = obtenerTexto(args[0], encoding);
-		if (text != null) {
-			generarPDF417(text, salida, formato, rows, columns, errorLevel, lenCodewords, options, color1, color2,
-					encoding);
+		if (args.length < 2) {
+			logger.warning("Sintaxis:");
+			logger.warning("pdf417-barcode-gen <entrada> <salida> [formato rows columns errorLevel lenCodewords options color1 color2 encoding]");
+		} else {
+			String salida = args[1];
+			String formato = DEFAULT_IMAGE_FORMAT;
+			int rows = DEFAULT_PDF417_ROWS;
+			int columns = DEFAULT_PDF417_COLUMNS;
+			int errorLevel = DEFAULT_PDF417_ERROR_LEVEL;
+			int lenCodewords = DEFAULT_PDF417_LEN_CODEWORDS;
+			int options = DEFAULT_PDF417_OPTIONS;
+			String encoding = DEFAULT_PDF417_ENCODING;
+			Color color1 = DEFAULT_PDF417_COLOR;
+			Color color2 = DEFAULT_PDF417_BG_COLOR;
+			if (args.length > 10) {
+				formato = args[2];
+				rows = Integer.parseInt(args[3]);
+				columns = Integer.parseInt(args[4]);
+				errorLevel = Integer.parseInt(args[5]);
+				lenCodewords = Integer.parseInt(args[6]);
+				options = Integer.parseInt(args[7]);
+				color1 = Color.decode(args[8]);
+				color2 = Color.decode(args[9]);
+				encoding = args[10];
+			}
+			String text = obtenerTexto(args[0], encoding);
+			if (text != null) {
+				generarPDF417(text, salida, formato, rows, columns, errorLevel, lenCodewords, options, color1, color2,
+						encoding);
+			}
 		}
 	}
 
