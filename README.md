@@ -1,12 +1,12 @@
 # pdf417-cli: Generador de códigos de barra en formato PDF417
 
-Interfaz de linea de comandos para generación de código de barras pdf417.
+Interfaz de línea de comandos para generación de código de barras pdf417.
 
 ## Construcción del componente
 
 ### Requisitos previos para la construcción
 
-Antes de poder construir el programa, se debe contar con las siguientes herramientas instaladas.
+Antes de poder construir el programa, se requiere contar con las siguientes herramientas instaladas.
 
 - [Oracle Java JDK 1.8+](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (Debido a dependencias)
 - [Apache Maven 3.x](https://maven.apache.org/)
