@@ -46,4 +46,4 @@ A continuación se presenta algo de información al respecto de los parámetros 
 - **color2**: es el color de fondo de la imagen generada, en formato hexadecimal RGB. Por defecto es blanco (0xFFFFFF).
 - **encoding**: es la codificación del texto. Por defecto es ISO-8859-1. Para más información acerca de los encodings disponibles diríjase al siguiente [enlace](https://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html).
 
-> ***NOTA*** (1): Para más antecedentes respecto de estos argumentos, diríjase a la documentación de la clase java[com.itextpdf.text.pdf.BarcodePDF417](http://itextsupport.com/apidocs/itext5/latest/com/itextpdf/text/pdf/BarcodePDF417.html).
+> ***NOTA*** (1): Para más antecedentes respecto de estos argumentos, diríjase a la documentación de la clase java [com.itextpdf.text.pdf.BarcodePDF417](http://itextsupport.com/apidocs/itext5/latest/com/itextpdf/text/pdf/BarcodePDF417.html).
