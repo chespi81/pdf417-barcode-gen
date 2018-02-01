@@ -65,11 +65,6 @@ import com.itextpdf.text.pdf.BarcodePDF417;
 public class App {
 
 	/**
-	 * Variable de acceso al log del sistema.
-	 */
-	private static Logger logger = Logger.getLogger(App.class.getName());
-
-	/**
 	 * Color predeterminado para el fondo de la imagen del código de barras.
 	 */
 	private static final Color DEFAULT_PDF417_BG_COLOR = Color.WHITE;
@@ -128,6 +123,11 @@ public class App {
 	private static final String DEFAULT_IMAGE_FORMAT = "png";
 
 	/**
+	 * Variable de acceso al log del sistema.
+	 */
+	private static Logger logger = Logger.getLogger(App.class.getName());
+
+	/**
 	 * Método principal de la clase de generación de códigos de barras.
 	 * <p>
 	 * Interpreta los parámetros de entrada, de acuerdo a la definición del
@@ -136,45 +136,47 @@ public class App {
 	 * salida en el formato especificado.
 	 * </p>
 	 * 
-	 * TODO Eliminar la ecxepción de la firma del método main.
-	 * 
 	 * @param args
 	 *            son los argumentos enviados desde la línea de comandos.
-	 * @throws IOException
-	 *             en caso de ocurrir una excepción.
 	 */
-	public static void main(String[] args) throws IOException {
-		if (args.length < 2) {
-			logger.warning("Sintaxis:");
-			logger.warning(
-					"pdf417-barcode-gen <entrada> <salida> [formato rows columns errorLevel lenCodewords options color1 color2 encoding]");
-		} else {
-			String salida = args[1];
-			String formato = DEFAULT_IMAGE_FORMAT;
-			int rows = DEFAULT_PDF417_ROWS;
-			int columns = DEFAULT_PDF417_COLUMNS;
-			int errorLevel = DEFAULT_PDF417_ERROR_LEVEL;
-			int lenCodewords = DEFAULT_PDF417_LEN_CODEWORDS;
-			int options = DEFAULT_PDF417_OPTIONS;
-			String encoding = DEFAULT_PDF417_ENCODING;
-			Color color1 = DEFAULT_PDF417_COLOR;
-			Color color2 = DEFAULT_PDF417_BG_COLOR;
-			if (args.length > 10) {
-				formato = args[2];
-				rows = Integer.parseInt(args[3]);
-				columns = Integer.parseInt(args[4]);
-				errorLevel = Integer.parseInt(args[5]);
-				lenCodewords = Integer.parseInt(args[6]);
-				options = Integer.parseInt(args[7]);
-				color1 = Color.decode(args[8]);
-				color2 = Color.decode(args[9]);
-				encoding = args[10];
+	public static void main(String[] args) {
+		try {
+			if (args.length < 2) {
+				logger.warning("Sintaxis:");
+				logger.warning(
+						"pdf417-barcode-gen <entrada> <salida> [formato rows columns errorLevel lenCodewords options color1 color2 encoding]");
+			} else {
+				String salida = args[1];
+				String formato = DEFAULT_IMAGE_FORMAT;
+				int rows = DEFAULT_PDF417_ROWS;
+				int columns = DEFAULT_PDF417_COLUMNS;
+				int errorLevel = DEFAULT_PDF417_ERROR_LEVEL;
+				int lenCodewords = DEFAULT_PDF417_LEN_CODEWORDS;
+				int options = DEFAULT_PDF417_OPTIONS;
+				String encoding = DEFAULT_PDF417_ENCODING;
+				Color color1 = DEFAULT_PDF417_COLOR;
+				Color color2 = DEFAULT_PDF417_BG_COLOR;
+				if (args.length > 10) {
+					formato = args[2];
+					rows = Integer.parseInt(args[3]);
+					columns = Integer.parseInt(args[4]);
+					errorLevel = Integer.parseInt(args[5]);
+					lenCodewords = Integer.parseInt(args[6]);
+					options = Integer.parseInt(args[7]);
+					color1 = Color.decode(args[8]);
+					color2 = Color.decode(args[9]);
+					encoding = args[10];
+				}
+				String text = obtenerTexto(args[0], encoding);
+				if (text != null) {
+					generarPDF417(text, salida, formato, rows, columns, errorLevel, lenCodewords, options, color1,
+							color2, encoding);
+				}
 			}
-			String text = obtenerTexto(args[0], encoding);
-			if (text != null) {
-				generarPDF417(text, salida, formato, rows, columns, errorLevel, lenCodewords, options, color1, color2,
-						encoding);
-			}
+		} catch (IOException ioe) {
+			logger.log(Level.WARNING, "Ocurrió un error durante la generación del código de barras. Movito: {0}",
+					ioe.getMessage());
+			logger.log(Level.FINEST, "Error durante generación de código de barras.", ioe);
 		}
 	}
 
