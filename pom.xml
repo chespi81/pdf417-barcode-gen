@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cl.chespi81.barcode</groupId>
-	<artifactId>pdf17-barcode-gen</artifactId>
+	<artifactId>pdf417-barcode-gen</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 

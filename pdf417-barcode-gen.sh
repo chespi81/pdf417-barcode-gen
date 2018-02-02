@@ -13,7 +13,7 @@ ENCODING=ISO-8859-1
 
 if [ "$#" -eq 2 ]; then
 	# Ejecucion del programa.
-	java -jar target/pdf17-barcode-gen-1.0-SNAPSHOT-jar-with-dependencies.jar ${1} ${2} ${FORMATO} ${ROWS} ${COLUMNS} ${ERROR_LEVEL} ${LEN_CODEWORDS} ${OPTIONS} ${COLOR} ${BG_COLOR} ${ENCODING}
+	java -jar target/pdf417-barcode-gen-1.0-SNAPSHOT-jar-with-dependencies.jar ${1} ${2} ${FORMATO} ${ROWS} ${COLUMNS} ${ERROR_LEVEL} ${LEN_CODEWORDS} ${OPTIONS} ${COLOR} ${BG_COLOR} ${ENCODING}
 else
-	java -jar target/pdf17-barcode-gen-1.0-SNAPSHOT-jar-with-dependencies.jar
+	java -jar target/pdf417-barcode-gen-1.0-SNAPSHOT-jar-with-dependencies.jar
 fi

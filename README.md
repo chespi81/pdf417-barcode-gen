@@ -1,4 +1,4 @@
-# pdf417-cli: Generador de códigos de barra en formato PDF417
+# pdf417-barcode-gen: Generador de códigos de barra en formato PDF417
 
 Interfaz de línea de comandos para generación de código de barras pdf417.
 
