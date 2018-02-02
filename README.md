@@ -10,7 +10,7 @@ A continuación se describen las instrucciones necesarias para realizar la const
 
 Antes de poder construir el programa, se requiere contar con las siguientes herramientas instaladas.
 
-- [Oracle Java JDK 1.8+](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (Debido a dependencias)
+- [Oracle Java JDK 1.6+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - [Apache Maven 3.x](https://maven.apache.org/)
 
 Se recomienda que durante el proceso de compilación se encuentren configuradas las siguientes variables de entorno.
