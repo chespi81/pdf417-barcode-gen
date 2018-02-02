@@ -6,7 +6,7 @@ Interfaz de línea de comandos para generación de código de barras pdf417.
 
 A continuación se describen las instrucciones necesarias para realizar la construcción del componente.
 
-### Requisitos previos para la construcción
+### Requisitos previos para la construcción
 
 Antes de poder construir el programa, se requiere contar con las siguientes herramientas instaladas.
 
