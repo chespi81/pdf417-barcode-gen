@@ -16,7 +16,7 @@ Antes de poder construir el programa, se requiere contar con las siguientes herr
 Se recomienda que durante el proceso de compilación se encuentren configuradas las siguientes variables de entorno.
 
 - ***JAVA_HOME***: apuntando a la carpeta base de la instalación del JDK.
-- ***PATH***: debe contener, entre otros, la ruta al JDK a utilizar (${JAVA_HOME}/bin en Linux/UNIX o %JAVA_HOME%\bin en MS Windows).
+- ***PATH***: debe contener, entre otros, la ruta al JDK a utilizar (`${JAVA_HOME}/bin` en Linux/UNIX o `%JAVA_HOME%\bin` en MS Windows).
 
 ### Instrucciones para la construcción
 
