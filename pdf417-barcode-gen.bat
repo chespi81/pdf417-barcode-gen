@@ -18,10 +18,10 @@ if not defined PARAM1 goto Error
 if not defined PARAM2 goto Error
 
 rem Ejecucion del programa.
-java -jar target/pdf417-barcode-gen-1.0-SNAPSHOT-jar-with-dependencies.jar %1 %2 %FORMATO% %ROWS% %COLUMNS% %ERROR_LEVEL% %LEN_CODEWORDS% %OPTIONS% %COLOR% %BG_COLOR% %ENCODING%
+java -jar target/pdf417-barcode-gen-1.0-jar-with-dependencies.jar %1 %2 %FORMATO% %ROWS% %COLUMNS% %ERROR_LEVEL% %LEN_CODEWORDS% %OPTIONS% %COLOR% %BG_COLOR% %ENCODING%
 goto Fin
 
 :Error
-java -jar target/pdf417-barcode-gen-1.0-SNAPSHOT-jar-with-dependencies.jar
+java -jar target/pdf417-barcode-gen-1.0-jar-with-dependencies.jar
 
 :Fin
